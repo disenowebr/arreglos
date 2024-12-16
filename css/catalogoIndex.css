@@ -1,0 +1,266 @@
+:root {
+    --clr-main: #f9c9d2;
+    --clr-main-light: #ffffff;
+    --clr-textMenu: #aa9ea0;
+    --clr-textHover: #e5c5c4;
+    --clr-texButton: #f3f3f3;
+    --clr-fondo: rgb(157, 110, 158);
+    --clr-textoLogo: #814c4c ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+@font-face {
+    font-family: love;
+    src: url(../fonts/Angelia-Beauty.ttf);
+}
+
+@font-face {
+    font-family: true;
+    src: url(../fonts/True-Stories.ttf);
+}
+
+.contenedor-menu {
+    margin: 0 auto;
+    max-width: 1400px;
+    display: flex;
+    background-color: var(--clr-main);
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-menu {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.texto-logo {
+    font-family: true;
+    font-size: 1.5rem;
+    color:var(--clr-textoLogo);
+    text-align: center;
+    margin: 1rem 1rem 0 2rem;
+
+}
+
+.texto-sublogo{
+    font-family: LOVE;
+    font-size: 1.2rem;
+    color: #748878de;
+    text-align: center;
+
+}
+
+.frase-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.lista-menu {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item-menu {
+    padding: .5rem;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.link-menu {
+    text-decoration: none;
+    background-color: var(--clr-main-light);
+    border-radius: 10px;
+    color: var(--clr-textMenu);
+    margin: 0 auto;
+    display: inline-block;
+    width: 9rem;
+    height: 2rem;
+    align-content: center;
+    transition: .7s;
+}
+
+.bi{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.cerrar, 
+.abrir{
+    color: var(--clr-textoLogo);
+    display: none;
+}
+
+.link-menu:hover {
+    color: var(--clr-textHover);
+    background-color: #178cd0;
+}
+
+.contenido {
+    background-color: var(--clr-main);
+    max-width: 1400px;
+    margin: 30px auto;
+    border-radius: 10px;
+
+}
+
+.producto-titulo{
+    text-align: center;
+    font-family: love;
+    color: #748878de;
+    font-size: 2rem;
+    padding-top: 20px ;
+}
+
+.cards-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 20px;
+    margin-bottom: 0;
+    position: relative;
+    width: 260px;
+    height: 260px;
+
+}
+
+.card .face {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+    margin: 0px auto;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front .img-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: var(--clr-texButton);
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: var(--clr-fondo);
+    padding: 15px;
+    color: var(--clr-texButton);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back h3 {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.card .back .link {
+    border-top: solid 1px var(--clr-textMenu);
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    text-decoration: none;
+    color: var(--clr-texButton);
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg)
+}
+
+@media screen and (max-width: 780px) {
+    .abrir, 
+    .cerrar{
+        font-size: 1.7rem;
+        display: block;
+        cursor: pointer;
+        transition: .3s;
+        background-color: transparent;
+
+    }
+
+    .menu{
+        opacity: 0;
+        visibility: hidden;
+        flex-direction: column;
+        align-items: end;
+        justify-content: start;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-color: var(--clr-main);
+        padding: 2rem;
+        gap: 1rem;
+        z-index: 100;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+    
+    .menu.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .lista-menu{
+        flex-direction: column;
+    }
+ 
+    
+    .abrir:hover, 
+    .cerrar:hover{
+        color: var(--clr-textMenu);
+    }
+
+}
