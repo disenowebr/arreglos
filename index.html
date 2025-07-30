@@ -10,34 +10,43 @@
 </head>
 
 <body>
+
     <header class="contenedor-menu">
-        <div class="logo-menu">
+        <div class="barra__menu">
+            <section class="logo-menu">
+                <p class="texto-logo">DULCES <br> CAPRICHOS</p>
+                <p class="texto-sublogo">Rosas, chocolates y pasteles.</p>
+            </section>
+            <i class="bi bi-list abrir" id="abrir"></i>
+            <nav class="menu" id="menu">
+                <i class="bi bi-x-circle-fill cerrar" id="cerrar"></i>
+                <ul class="lista-menu">
+                    <li class="item-menu"><a class="link-menu" href="#contenido"><i
+                                class="bi bi-bag-heart-fill"></i>Productos</a>
+                    </li>
+                    <li class="item-menu"><a class="link-menu"
+                            href=" https://api.whatsapp.com/send?phone=16098922968" target="_blank"><i
+                                class="bi bi-whatsapp"></i>Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="imagen__principal">
             <p class="texto-logo">DULCES <br> CAPRICHOS</p>
             <p class="texto-sublogo">Rosas, chocolates y pasteles.</p>
-        </div>
-        <i class="bi bi-list abrir" id="abrir"></i>
-        <nav class="menu" id="menu">
-            <i class="bi bi-x-circle-fill cerrar" id="cerrar"></i>
-            <ul class="lista-menu">
-                <!-- <li class="item-menu"><a class="link-menu" href="#"><i class="bi bi-person-circle"></i>Nosotros</a></li>
-                <li class="item-menu"><a class="link-menu" href="#productos"><i class="bi bi-bag-heart-fill"></i>Productos</a>
-                </li> -->
-                <li class="item-menu"><a class="link-menu" href=" https://api.whatsapp.com/send?phone=16098922968"><i
-                            class="bi bi-whatsapp"></i>Contacto</a></li>
-            </ul>
-        </nav>
+        </section>
     </header>
 
-    <main class="contenido">
+    <main class="contenido" id="contenido">
 
-        <h2 class="producto-titulo" id="productos">Productos</h2>
+        <p class="productos">Productos</p>
         <section class="cards-body">
             <div class="card">
-                <div class="face front">
+                <div class="face front open-card">
                     <img class="img-front" src="img/arreglos/arreglo01.jpg" alt="">
                     <h3>Detalles del producto</h3>
                 </div>
-                <div class="face back">
+                <div class="face back close-card">
                     <h3>Caja con pastel</h3>
                     <p>Caja con pastel de chocolate y 6 rosas, personalizada con frase a elegir o nombre. <br>(Puedes
                         elegir otro sabor de pastel) </p>
@@ -203,7 +212,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </section>
     </main>
     <script src="./js/dulces.js"></script>
